@@ -6,6 +6,7 @@ FROM practica1.Usuarios u
 JOIN practica1.ProfileStudent ps ON ps.UserId = u.Id
 JOIN practica1.UsuarioRole ur ON ur.UserId = u.Id
 JOIN practica1.Roles r ON r.Id = ur.RoleId
+WHERE u.Id = @id
 );
 
 
