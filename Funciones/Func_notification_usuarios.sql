@@ -1,4 +1,4 @@
-CREATE FUNCTION practica1.func_tutor_course (@id int)
+CREATE FUNCTION practica1.func_notification_usuarios (@id int)
 RETURNS TABLE
 AS
 RETURN
