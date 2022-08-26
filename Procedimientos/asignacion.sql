@@ -55,22 +55,8 @@ SET @usuarioActivo = (
         where Course.CodCourse = @codCourse
     );
 
-    -- ! Validar cantidad de creditos
-    -- IF @numCreditos >= @creditosRequeridos
-
-    --     BEGIN
-
-    --     END
-
-    -- ELSE
-
-    --     BEGIN
-
-    --     END
-
-    -- ? Validar si tiene la cantidad de usuarios y es usuario activo
-    -- @numAsignados < 5 
-    IF @usuarioActivo = 1
+    -- ? Validar si hay cupo y es usuario activo
+    IF @numAsignados <= 10 AND @usuarioActivo = 1
 
         BEGIN
 
@@ -111,7 +97,7 @@ SET @usuarioActivo = (
 
                     -- ? Obtener id del tutor
                     SET @idTutor = (
-                        SELECT CourseTutor.TutorId 
+                        SELECT top 1 CourseTutor.TutorId 
                             FROM practica1.CourseTutor WHERE CourseTutor.CourseCodCourse = @codCourse
                     );
 
