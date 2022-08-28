@@ -1,5 +1,6 @@
 
-
+use BD2
+GO
 -- * Procedimiento de validación de datos
 
 /*
@@ -43,11 +44,11 @@ AS
 
     -- * Tabla course
     -- ? Valida que solo se ingresen letras en el campo 'Name'
-    ALTER TABLE practica1.Course
-    ADD CONSTRAINT [constraint_CourseName] CHECK(
-        [Name] NOT LIKE '%[0-9]%' AND
-        [Name] NOT LIKE '[,.!?;;@/&¡!¿?#$()=*-_{}]'
-    );
+    -- ALTER TABLE practica1.Course
+    -- ADD CONSTRAINT [constraint_CourseName] CHECK(
+    --     [Name] NOT LIKE '%[0-9]%' AND
+    --     [Name] NOT LIKE '[,.!?;;@/&¡!¿?#$()=*-_{}]'
+    -- );
 
 
     -- ? Valida que solo se ingresen numeros
@@ -67,4 +68,13 @@ GO
         [Name] NOT LIKE '[,.!?;;@/&¡!¿?#$()=*-_{}]'
     );
 GO
+
+use BD2
+
+GO
+
+SELECT * FROM practica1
+
+GO
+
 
