@@ -1,0 +1,15 @@
+
+use('practica2');
+
+
+const aggregation = [
+  {
+    $sortByCount: '$timestampx'
+  },
+  {
+    $limit: 1
+  }
+]
+
+
+db.LogActividades.aggregate(aggregation);

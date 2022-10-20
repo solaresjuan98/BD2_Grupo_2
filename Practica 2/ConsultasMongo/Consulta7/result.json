@@ -1,0 +1,27 @@
+[
+  {
+    "_id": 10,
+    "Habitacion": "Recepcion",
+    "count": 37546
+  },
+  {
+    "_id": 12,
+    "Habitacion": "Estación de revisión 1",
+    "count": 5286
+  },
+  {
+    "_id": 1,
+    "Habitacion": "Sala de examenes 1",
+    "count": 3778
+  },
+  {
+    "_id": 2,
+    "Habitacion": "Sala de examenes 2",
+    "count": 2968
+  },
+  {
+    "_id": 13,
+    "Habitacion": "Estación de revisión 2",
+    "count": 2790
+  }
+]

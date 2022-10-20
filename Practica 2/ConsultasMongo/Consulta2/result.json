@@ -1,0 +1,77 @@
+[
+    {
+      "_id": 1,
+      "Habitacion": "Sala de examenes 1",
+      "count": 3778
+    },
+    {
+      "_id": 2,
+      "Habitacion": "Sala de examenes 2",
+      "count": 2968
+    },
+    {
+      "_id": 3,
+      "Habitacion": "Sala de examenes 3",
+      "count": 2139
+    },
+    {
+      "_id": 4,
+      "Habitacion": "Sala de examenes 4",
+      "count": 1387
+    },
+    {
+      "_id": 5,
+      "Habitacion": "Sala de imagenes 1",
+      "count": 1786
+    },
+    {
+      "_id": 6,
+      "Habitacion": "Sala de procedimientos 1",
+      "count": 2154
+    },
+    {
+      "_id": 7,
+      "Habitacion": "Sala de procedimientos 2",
+      "count": 1816
+    },
+    {
+      "_id": 8,
+      "Habitacion": "Sala de procedimientos 3",
+      "count": 1352
+    },
+    {
+      "_id": 9,
+      "Habitacion": "Sala de procedimientos 4",
+      "count": 980
+    },
+    {
+      "_id": 10,
+      "Habitacion": "Recepcion",
+      "count": 37546
+    },
+    {
+      "_id": 11,
+      "Habitacion": "Laboratorio",
+      "count": 1876
+    },
+    {
+      "_id": 12,
+      "Habitacion": "Estación de revisión 1",
+      "count": 5286
+    },
+    {
+      "_id": 13,
+      "Habitacion": "Estación de revisión 2",
+      "count": 2790
+    },
+    {
+      "_id": 14,
+      "Habitacion": "Estación de revisión 3",
+      "count": 1288
+    },
+    {
+      "_id": 15,
+      "Habitacion": "Estación de revisión 4",
+      "count": 538
+    }
+  ]

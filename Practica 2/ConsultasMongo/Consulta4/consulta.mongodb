@@ -1,0 +1,25 @@
+
+use('practica2');
+
+
+const aggregation = [
+  {
+    $group: {
+      _id: '$Edad',
+      count: {
+        $sum: 1
+      }
+    }
+  },
+  {
+    $sort: {
+      count: -1
+    }
+  },
+  {
+    $limit: 5
+  }
+]
+
+
+db.LogActividades.aggregate(aggregation);

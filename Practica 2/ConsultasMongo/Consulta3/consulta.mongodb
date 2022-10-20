@@ -1,0 +1,17 @@
+
+use('practica2');
+
+
+const aggregation = [
+  {
+    $project: {
+      Genero: 1
+    }
+  },
+  {
+    $sortByCount: '$Genero'
+  }
+]
+
+
+db.LogActividades.aggregate(aggregation);
