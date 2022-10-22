@@ -22,24 +22,37 @@ WHERE edad >= 60;
 
 # 2. Cantidad de pacientes que pasan por cada habitacion
 SELECT
-    HABITACION_idHabitacion,
-    count(*)
+    distinct
+    habitacion,
+    count(*) num_veces
 from LOG_ACTIVIDAD
+    JOIN HABITACION h
+    on LOG_ACTIVIDAD.HABITACION_idHabitacion = h.idHabitacion
 GROUP BY
-    HABITACION_idHabitacion;
+    HABITACION_idHabitacion
+    ORDER BY num_veces;
 
 # 3. Cantidad de pacientes que llegan a la clínica, agrupados por género
-SELECT genero, count(*) as num
+SELECT distinct genero, count(*) as num
 FROM LOG_ACTIVIDAD
     JOIN PACIENTE p on LOG_ACTIVIDAD.PACIENTE_idPaciente = p.idPaciente
     GROUP BY genero;
 
+SELECT genero, COUNT(*) 
+    from `PACIENTE`
+    GROUP BY genero;
+
+SELECT DISTINCT COUNT(*) from PACIENTE;
+
+
 # 4. Top 5 edades más atendidas en la clínica
-SELECT edad, count(*) as num
+SELECT distinct edad, count(*) as num
 FROM LOG_ACTIVIDAD
     JOIN PACIENTE p on LOG_ACTIVIDAD.PACIENTE_idPaciente = p.idPaciente
     GROUP BY edad
     ORDER BY num DESC LIMIT 5;
+
+SELECT COUNT(*) from `LOG_ACTIVIDAD`;
 
 # 5. Top 5 edades menos atendidas en la clinica
 SELECT edad, count(*) as num

@@ -1,0 +1,22 @@
+
+
+db.orders.aggregate({
+$lookup:
+    {
+        from: "products",
+        localField: "item",
+        foreignField : "_id",
+        as: "ordered_product"
+    }
+})
+
+db.Log_actividad.aggregate({
+    
+        $lookup:{
+            from: "Paciente",
+            localField : "idPaciente",
+            foreignField : "idPaciente",
+            as : "data"
+        }
+    
+});
