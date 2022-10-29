@@ -1,5 +1,8 @@
+-- Active: 1665848805213@@143.244.167.203@3306@BD2_Practica2
 
 use BD2_Practica2;
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
 CREATE TABLE PACIENTE
 (	
