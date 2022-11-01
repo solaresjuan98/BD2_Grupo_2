@@ -19,7 +19,7 @@ const dbPool = () => {
       throw err;
     }
 
-    console.log('Database connected successfully');
+    console.log('MySQL connected');
 
   })
 }

@@ -8,6 +8,7 @@ const appRouter = require('../routes/routes');
 // const connection = require('../db/config');
 const { dbConnection: mongoCNN } = require('../db/mongo-config');
 const { pool } = require('../db/config');
+const { createRedisClient } = require('../db/redis-config');
 
 class Server {
     constructor() {
@@ -26,17 +27,20 @@ class Server {
 
     }
 
-    async database () {
-        await mongoCNN();
-        await pool();
+    async database() {
+        await Promise.all([
+            mongoCNN(),
+            pool()
+        ])
     }
 
     routes() {
         this.app.use('/mysql', appRouter);
         this.app.use('/mongo', require('../routes/mongo'));
+        this.app.use('/redis', require('../routes/redis'));
     }
 
-    listen(){
+    listen() {
         this.app.listen(process.env.PORT, () => {
             console.log(`Server running on port ${process.env.PORT}`);
         });
