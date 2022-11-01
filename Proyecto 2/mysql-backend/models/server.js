@@ -32,7 +32,7 @@ class Server {
     }
 
     routes() {
-        // this.app.use('/mysql', appRouter);
+        this.app.use('/mysql', appRouter);
         this.app.use('/mongo', require('../routes/mongo'));
     }
 
