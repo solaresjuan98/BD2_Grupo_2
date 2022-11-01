@@ -32,9 +32,9 @@ const queryController = (query) => {
 }
 
 module.exports = {
-    // mongo1_a: queryController(mongo1a),
-    // mongo1_b: queryController(mongo1b),
-    // mongo1_c: queryController(mongo1c),
+     mongo1_a: queryController(mongo1a),
+     mongo1_b: queryController(mongo1b),
+    mongo1_c: queryController(mongo1c),
     mongo_2: queryController(mongo2),
     mongo_3: queryController(mongo3),
     mongo_4: queryController(mongo4),
