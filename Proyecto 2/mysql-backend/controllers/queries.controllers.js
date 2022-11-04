@@ -19,7 +19,7 @@ const query1_a = async (req, res = response) => {
 
         return res.status(400).json({
             message: "Error",
-            isCorrect: false
+            isCorrect: false,
         })
     }
 
@@ -37,7 +37,7 @@ const query1_b = async (req, res = response) => {
             result
         })
     } catch (error) {
-
+        console.log(error);
         return res.status(400).json({
             message: "Error",
             isCorrect: false

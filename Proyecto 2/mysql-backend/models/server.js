@@ -5,7 +5,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser');
 const appRouter = require('../routes/routes');
 
-// const connection = require('../db/config');
+const connection = require('../db/config');
 const { dbConnection: mongoCNN } = require('../db/mongo-config');
 const { pool } = require('../db/config');
 const { createRedisClient } = require('../db/redis-config');
@@ -30,12 +30,11 @@ class Server {
     async database() {
         await Promise.all([
             mongoCNN(),
-            pool()
         ])
     }
 
     routes() {
-        this.app.use('/mysql', appRouter);
+        this.app.use('/mysql', require('../routes/routes'));
         this.app.use('/mongo', require('../routes/mongo'));
         this.app.use('/redis', require('../routes/redis'));
     }

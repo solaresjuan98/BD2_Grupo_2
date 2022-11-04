@@ -1,4 +1,4 @@
-const {pool} = require('./config');
+const { pool } = require('./config');
 
 
 
@@ -9,7 +9,7 @@ const query1a = () => {
         let query = `SELECT COUNT(*) total_pacientes
         FROM PACIENTE
         WHERE edad < 18; `
-
+        console.log(pool);
         pool.query(query, (err, res) => {
             if (err) reject(err);
 

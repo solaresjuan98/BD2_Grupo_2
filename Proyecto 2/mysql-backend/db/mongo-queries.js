@@ -17,73 +17,57 @@ const performAggregation = (aggregation, collection) => {
     })
 }
 
+const countQuery = (query, collection) => {
+
+    return new Promise(async (resolve, reject) => {
+
+        try {
+
+            const dataset = db.collection('Pacientes');
+            const result = dataset.countDocuments(query, function (err, count) {
+
+                if (err) {
+                    console.log(err)
+                }
+                else {
+                    resolve(count)
+                }
+            });
+
+        } catch (error) {
+            console.log(error);
+            reject(error);
+        }
+    })
+}
+
+
 const mongo1a = () => {
 
-    return new Promise((resolve, reject) => {
+    let query = { edad: { $gte: 18 } };
+    return countQuery(query, 'Pacientes')
+}
 
-        let query = [
-            {
-                $group: {
-                    _id: '$idHabitacion',
-                    idHabitacion: {
-                        $first: '$idHabitacion'
-                    },
-                    Habitacion: {
-                        $first: '$Habitacion'
-                    },
-                    count: {
-                        $sum: 1
-                    }
-                }
-            },
-            {
-                $sort: {
-                    _id: 1
-                }
+const mongo1b = () => {
+
+    let query = { 
+        $and: [
+            { 
+                edad: { $gte: 18 }, 
+                edad: { $lt: 60 } 
             }
         ]
-        const result = mongoose.connection.db.LogActividades.aggregate(query);
-        resolve(result);
+    };
 
-    })
-
+    return countQuery(query, 'Pacientes')
 }
 
-const query1b = () => {
+const mongo1c = () => {
 
-    return new Promise((resolve, reject) => {
-
-        let query = `SELECT COUNT(*) total_pacientes
-        FROM PACIENTE
-        WHERE edad >= 18 and edad < 60; `
-
-        pool.query(query, (err, res) => {
-            if (err) reject(err);
-
-            return resolve(res);
-        })
-
-    })
-
+    let query = { edad: { $gte: 60 }};
+    return countQuery(query, 'Pacientes')
 }
 
-const query1c = () => {
-
-    return new Promise((resolve, reject) => {
-
-        let query = `SELECT COUNT(*) as total_pacientes
-        FROM PACIENTE
-        WHERE edad >= 60;`
-
-        pool.query(query, (err, res) => {
-            if (err) reject(err);
-
-            return resolve(res);
-        })
-
-    })
-
-}
 
 
 const mongo2 = () => {
@@ -247,6 +231,9 @@ const mongo8 = () => {
 }
 
 module.exports = {
+    mongo1a,
+    mongo1b,
+    mongo1c,
     mongo2,
     mongo3,
     mongo4,
