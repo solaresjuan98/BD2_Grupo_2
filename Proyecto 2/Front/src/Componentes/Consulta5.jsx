@@ -24,11 +24,11 @@ export const Consulta5 = () => {
 
   const GetconsultaMysql = async () => {
     const resp = await peticion(
-      "http://localhost:5000/mysql/2",
+      "http://localhost:5000/mysql/5",
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mysql",resp);
     setConsultaMysql(resp.result);
   };
  
@@ -38,7 +38,7 @@ export const Consulta5 = () => {
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mongo",resp);
     setconsultaMongo(resp.result);
   };
 
@@ -77,7 +77,7 @@ export const Consulta5 = () => {
                   }}
                   weight="bold"
                 >
-               id
+               edad
                 </Text> </th>
 
                 <th> <Text
@@ -155,7 +155,7 @@ export const Consulta5 = () => {
                      }}
                      weight="bold"
                    >
-                  Sexo
+                  edad
                    </Text> </th>
    
                    <th> <Text
@@ -170,7 +170,7 @@ export const Consulta5 = () => {
                    </Text> </th>
            </thead>
    
-           {consultaMongo.map((item, i) => (
+           {consultaMysql.map((item, i) => (
              <>
                <tr>
                  <td>
@@ -182,7 +182,7 @@ export const Consulta5 = () => {
                      }}
                      weight="bold"
                    >
-                     {item._id}
+                     {item.edad}
                    </Text>
                  </td>
    
@@ -195,7 +195,7 @@ export const Consulta5 = () => {
                      }}
                      weight="bold"
                    >
-                     {item.count}
+                     {item.num}
                    </Text>
                  </td>
    

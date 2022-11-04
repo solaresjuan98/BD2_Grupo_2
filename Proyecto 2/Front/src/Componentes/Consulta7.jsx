@@ -24,11 +24,11 @@ export const Consulta7 = () => {
 
   const GetconsultaMysql = async () => {
     const resp = await peticion(
-      "http://localhost:5000/mysql/2",
+      "http://localhost:5000/mysql/7",
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mysql",resp);
     setConsultaMysql(resp.result);
   };
  
@@ -38,7 +38,7 @@ export const Consulta7 = () => {
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mongo",resp);
     setconsultaMongo(resp.result);
   };
 
@@ -169,16 +169,7 @@ export const Consulta7 = () => {
    <Grid xs={8} sm={8} align="center">
          <table class="content-table">
            <thead>
-             <th> <Text
-                     h1
-                     size={30}
-                     css={{
-                       textGradient: "45deg, $blue600  -20%, $blue600 100%",
-                     }}
-                     weight="bold"
-                   >
-                  Sexo
-                   </Text> </th>
+           
    
                    <th> <Text
                      h1
@@ -202,7 +193,7 @@ export const Consulta7 = () => {
                    </Text> </th>
            </thead>
    
-           {consultaMongo.map((item, i) => (
+           {consultaMysql.map((item, i) => (
              <>
                <tr>
                  <td>
@@ -214,7 +205,7 @@ export const Consulta7 = () => {
                      }}
                      weight="bold"
                    >
-                     {item._id}
+                     {item.HABITACION_idHabitacion}
                    </Text>
                  </td>
    
@@ -227,7 +218,7 @@ export const Consulta7 = () => {
                      }}
                      weight="bold"
                    >
-                     {item.count}
+                     {item.num}
                    </Text>
                  </td>
    

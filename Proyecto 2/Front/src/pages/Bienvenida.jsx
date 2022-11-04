@@ -21,6 +21,9 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import { Consulta1A } from "../Componentes/Consulta1A";
+import { Consulta1B } from "../Componentes/Consulta1B";
+import { Consulta1C } from "../Componentes/Consulta1C";
 import { Consulta2 } from "../Componentes/Consulta2";
 import { Consulta3 } from "../Componentes/Consulta3";
 import { Consulta4 } from "../Componentes/Consulta4";
@@ -165,7 +168,24 @@ export const Bienvenida = () => {
                 {" "} 
          
               </TabPanel>
+              <TabPanel value="3">
+                {" "} 
                 
+                <Consulta1A></Consulta1A>
+         
+              </TabPanel> 
+              <TabPanel value="4">
+                {" "} 
+                
+                <Consulta1B></Consulta1B>
+         
+              </TabPanel>
+              <TabPanel value="5">
+                {" "} 
+                
+                <Consulta1C></Consulta1C>
+         
+              </TabPanel>
               <TabPanel value="6">
                 {" "} 
                 

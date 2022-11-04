@@ -28,7 +28,7 @@ export const Consulta2 = () => {
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mysql",resp);
     setConsultaMysql(resp.result);
   };
  
@@ -38,7 +38,7 @@ export const Consulta2 = () => {
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mongo",resp);
     setconsultaMongo(resp.result);
   };
 
@@ -126,7 +126,7 @@ export const Consulta2 = () => {
                   }}
                   weight="bold"
                 >
-                  {item.idHabitacion}
+                  {item.Habitacion}
                 </Text>
               </td>
 
@@ -177,7 +177,7 @@ export const Consulta2 = () => {
                      }}
                      weight="bold"
                    >
-                  Sexo
+                  idHabitacion
                    </Text> </th>
    
                    <th> <Text
@@ -202,7 +202,7 @@ export const Consulta2 = () => {
                    </Text> </th>
            </thead>
    
-           {consultaMongo.map((item, i) => (
+           {consultaMysql.map((item, i) => (
              <>
                <tr>
                  <td>
@@ -214,10 +214,9 @@ export const Consulta2 = () => {
                      }}
                      weight="bold"
                    >
-                     {item._id}
+                     {i}
                    </Text>
                  </td>
-   
                  <td>
                    <Text
                      h1
@@ -227,7 +226,19 @@ export const Consulta2 = () => {
                      }}
                      weight="bold"
                    >
-                     {item.count}
+                     {item.habitacion}
+                   </Text>
+                 </td>
+                 <td>
+                   <Text
+                     h1
+                     size={15}
+                     css={{
+                       textGradient: "45deg, black -20%, black 100%",
+                     }}
+                     weight="bold"
+                   >
+                     {item.num_veces}
                    </Text>
                  </td>
    

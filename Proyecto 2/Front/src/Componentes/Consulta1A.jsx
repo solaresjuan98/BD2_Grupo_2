@@ -14,9 +14,9 @@ import {
 } from "@nextui-org/react";
 import { peticion } from "../helpers/fetch";
 
-export const Consulta4 = () => {
+export const Consulta1A = () => {
 
-  const [consultaMongo, setconsultaMongo] = useState([]);
+  const [consultaMongo, setconsultaMongo] = useState();
 
   const [consultaMysql, setConsultaMysql] = useState([]);
   const [cargandoconsultaMongo, setcargandoconsultaMongo] = useState([]);
@@ -24,7 +24,7 @@ export const Consulta4 = () => {
 
   const GetconsultaMysql = async () => {
     const resp = await peticion(
-      "http://localhost:5000/mysql/4",
+      "http://localhost:5000/mysql/1a",
       "",
       "GET"
     );
@@ -34,7 +34,7 @@ export const Consulta4 = () => {
  
   const GetconsultaMongo = async () => {
     const resp = await peticion(
-      "http://localhost:5000/mongo/4",
+      "http://localhost:5000/mongo/1a",
       "",
       "GET"
     );
@@ -66,7 +66,7 @@ export const Consulta4 = () => {
         MongoDB
       </Text>
       </Grid>
-<Grid xs={12} sm={12} align="center">
+<Grid xs={8} sm={8} align="center">
       <table class="content-table">
         <thead>
           <th> <Text
@@ -77,58 +77,35 @@ export const Consulta4 = () => {
                   }}
                   weight="bold"
                 >
-               edad
+               Total pacientes
                 </Text> </th>
 
-                <th> <Text
-                  h1
-                  size={30}
-                  css={{
-                    textGradient: "45deg, $green600 -20%, $green600 100%",
-                  }}
-                  weight="bold"
-                >
-               Count
-                </Text> </th>
+              
         </thead>
 
-        {consultaMongo.map((item, i) => (
-          <>
+      
             <tr>
               <td>
                 <Text
                   h1
-                  size={15}
+                  size={30}
                   css={{
                     textGradient: "45deg, black -20%, black 100%",
                   }}
                   weight="bold"
                 >
-                  {item._id}
+                  {consultaMongo}
                 </Text>
               </td>
-
-              <td>
-                <Text
-                  h1
-                  size={15}
-                  css={{
-                    textGradient: "45deg, black -20%, black 100%",
-                  }}
-                  weight="bold"
-                >
-                  {item.count}
-                </Text>
-              </td>
+        
 
            
             </tr>
-          </>
-        ))}
+         
       </table>
       </Grid>
       </Grid.Container>
-     </Grid>  <Grid xs={6} sm={12} align="center" style={{"marginLeft":"200px"}} >
+     </Grid>  <Grid xs={6} sm={6} align="center" style={{"marginRight":"0px"}} >
        
        <Grid.Container gap={2} justify="flex-start">
    
@@ -155,50 +132,29 @@ export const Consulta4 = () => {
                      }}
                      weight="bold"
                    >
-                  edad
+                  Total Pacientes
                    </Text> </th>
    
-                   <th> <Text
-                     h1
-                     size={30}
-                     css={{
-                       textGradient: "45deg, $blue600 -20%, $blue600 100%",
-                     }}
-                     weight="bold"
-                   >
-                  Count
-                   </Text> </th>
+                  
            </thead>
    
            {consultaMysql.map((item, i) => (
              <>
                <tr>
+                
                  <td>
                    <Text
                      h1
-                     size={15}
+                     size={30}
                      css={{
                        textGradient: "45deg, black -20%, black 100%",
                      }}
                      weight="bold"
                    >
-                     {item.edad}
+                     {item.total_pacientes}
                    </Text>
                  </td>
-   
-                 <td>
-                   <Text
-                     h1
-                     size={15}
-                     css={{
-                       textGradient: "45deg, black -20%, black 100%",
-                     }}
-                     weight="bold"
-                   >
-                     {item.num}
-                   </Text>
-                 </td>
-   
+                 
               
                </tr>
              </>

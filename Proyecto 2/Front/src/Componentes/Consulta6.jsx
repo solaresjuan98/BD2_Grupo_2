@@ -28,7 +28,7 @@ export const Consulta6 = () => {
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mysql",resp);
     setConsultaMysql(resp.result);
   };
  
@@ -38,7 +38,7 @@ export const Consulta6 = () => {
       "",
       "GET"
     );
-    console.log(resp);
+    console.log("mongo",resp);
     setconsultaMongo(resp.result);
   };
 
@@ -66,7 +66,7 @@ export const Consulta6 = () => {
         MongoDB
       </Text>
       </Grid>
-<Grid xs={8} sm={8} align="center">
+<Grid xs={12} sm={12} align="center">
       <table class="content-table">
         <thead>
           <th> <Text
@@ -150,7 +150,7 @@ export const Consulta6 = () => {
       </table>
       </Grid>
       </Grid.Container>
-     </Grid>  <Grid xs={6} sm={6} align="center" style={{"marginRight":"0px"}} >
+     </Grid>  <Grid xs={12} sm={12} align="center" style={{"marginLeft":"200px"}} >
        
        <Grid.Container gap={2} justify="flex-start">
    
@@ -169,16 +169,7 @@ export const Consulta6 = () => {
    <Grid xs={8} sm={8} align="center">
          <table class="content-table">
            <thead>
-             <th> <Text
-                     h1
-                     size={30}
-                     css={{
-                       textGradient: "45deg, $blue600  -20%, $blue600 100%",
-                     }}
-                     weight="bold"
-                   >
-                  Sexo
-                   </Text> </th>
+           
    
                    <th> <Text
                      h1
@@ -202,7 +193,7 @@ export const Consulta6 = () => {
                    </Text> </th>
            </thead>
    
-           {consultaMongo.map((item, i) => (
+           {consultaMysql.map((item, i) => (
              <>
                <tr>
                  <td>
@@ -214,7 +205,7 @@ export const Consulta6 = () => {
                      }}
                      weight="bold"
                    >
-                     {item._id}
+                     {item.habitacion}
                    </Text>
                  </td>
    
@@ -227,7 +218,7 @@ export const Consulta6 = () => {
                      }}
                      weight="bold"
                    >
-                     {item.count}
+                     {item.num_veces}
                    </Text>
                  </td>
    
